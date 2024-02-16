@@ -1,0 +1,150 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <style>
+        .main-div{
+            background-color:bisque;
+            margin:10px;
+            padding:4rem;
+        }
+        
+        .main-div .form {
+                margin: 3rem;
+                
+        }
+        .card{
+            height:100px;
+            width:100px;
+        }
+
+  </style>
+
+
+</head>
+<body>
+   <div class="container">
+        <form onsubmit="show()">
+            <div class="main-div">
+
+                <h1 class="text-center">
+                    Student Registration form
+                </h1>
+                <br />
+                <h3 class="text-center"> All The Details Are Mandetory Plese Fill Out All The Fields </h3>
+
+                <div class="form">
+
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="fname" placeholder="name@example.com">
+                        <label for="floatingInput">First Name</label>
+                        <span> error msg</span>
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="lname" placeholder="Password">
+                        <label for="floatingPassword">Last Name</label>
+                        <span> error msg</span>
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                        <input type="email" class="form-control" id="email" placeholder="Password">
+                        <label for="floatingPassword">Email</label>
+                        <span> error msg</span>
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="pwd" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="cpwd" placeholder="Password">
+                        <label for="floatingPassword">Conform Password</label>
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                        <input type="number" class="form-control" id="number" placeholder="Password">
+                        <label for="floatingPassword">Phone Number</label>
+                        <span> error msg</span>
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="add" placeholder="Password">
+                        <label for="floatingPassword">Address</label>
+                        <span> error msg</span>
+                    </div>
+
+                    <br />
+
+                   <div class="text-center">
+                        <button class="btn-outline-success">Suuuubmit</button>
+                        <br />
+                        <input type="submit" />
+                   </div>
+
+
+                </div>
+
+            </div>
+        </form>
+
+   </div>
+    <script>
+        function show() {
+
+            let a = document.getElementById("fname").value;
+            var b = document.getElementById("lname").value;
+            var c = document.getElementById("email").value;
+            var d = document.getElementById("number").value;
+            var e = document.getElementById("add").value;
+            var f = document.getElementById("pwd").value;
+            var g = document.getElementById("cpwd").value;
+
+            if (a == "" || b == "" || c == "" || d=="" ||  e=="" ||  f == "" || g == "") {
+                alert("Opps You Must Have Left Some Sections Empty Plese Fill Out All the boxes");
+                   return false;
+            }
+            else if (!mobilevalidation()) {
+                return false;
+            }
+            else{
+                alert("First Name:" + a + " \n"
+                    + "Last Name:" + b + "\n" +
+                    "Emal:" + c + "\n" +
+                    "Mob:" + d + "\n" +
+                    "Address:" + e);
+                return true;
+            }
+
+            return true;
+        }
+
+        function mobilevalidation(){
+            var d = document.getElementById("number").value;
+            var num = /^\d{10}$/;
+
+            if (!num.test(d)) { 
+                alert("mobile number should be 10 digits");
+                return false;
+            }
+           
+            return true;
+        }
+
+
+
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"> </script>
+   
+
+
+
+</body>
+</html>
